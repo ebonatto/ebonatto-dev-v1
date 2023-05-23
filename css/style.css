@@ -92,6 +92,13 @@ body {
     gap: 20px;
 }
 
+.apresentacao-conteudo-links-link:hover,
+.apresentacao-conteudo-email:hover {
+    color: var(--cor-destaque);
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
 .apresentacao-conteudo-email {
     font-family: var(--fonte-secundaria);
     font-weight: 600;
