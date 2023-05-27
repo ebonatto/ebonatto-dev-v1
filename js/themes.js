@@ -27,11 +27,14 @@
 // botaoTema.addEventListener("click", trocaTema);
 
 body = document.querySelector("body");
+foto = document.querySelector(".apresentacao-foto");
 
 document.querySelector("#checkbox").addEventListener("change", () => {
   if (body.className === "dark-theme") {
     body.className = "light-theme";
+    foto.src = "./assets/foto-light.png";
   } else {
     body.className = "dark-theme";
+    foto.src = "./assets/foto-dark.png";
   }
 });
