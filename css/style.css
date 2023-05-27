@@ -3,6 +3,8 @@
 :root {
   --fonte-primaria: "Inter", sans-serif;
   --fonte-secundaria: "Fira Code", monospace;
+
+  --tamanho-theme-toggle: 4rem;
 }
 
 * {
@@ -21,16 +23,63 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 .theme-button {
-  padding: 50px 0 0 0;
+  margin: 40px 0 0 0;
+}
 
-  @media (max-width: 650px) {
-    padding: 30px 0 0 0;
-    width: 30px;
-    height: auto;
-  }
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: relative;
+  width: var(--tamanho-theme-toggle);
+  height: var(--tamanho-theme-toggle);
+  color: var(--cor-base);
+  transition: transform 0.5s ease;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.theme-toggle i {
+  font-size: var(--tamanho-theme-toggle);
+  position: absolute;
+  transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease;
+}
+
+.fa-sun {
+  color: var(--cor-texto);
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.fa-moon {
+  color: var(--cor-texto);
+  transform: translateX(0px);
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked ~ .theme-toggle .fa-sun {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.checkbox:checked ~ .theme-toggle .fa-moon {
+  opacity: 0;
+  transform: translateX(-50px);
 }
 
 .apresentacao {
@@ -41,7 +90,6 @@ body {
   max-width: 1370px;
   padding: 17vh 50px;
   gap: 30px;
-  /* width: 71.35%; */
 }
 
 .apresentacao-conteudo {
@@ -68,7 +116,6 @@ body {
 .apresentacao-conteudo-titulo {
   font-family: var(--fonte-primaria);
   color: var(--cor-destaque);
-  /* letter-spacing: 0.02em; */
   font-size: 7rem;
 }
 
@@ -87,24 +134,32 @@ body {
 }
 
 .apresentacao-conteudo-links-link {
-  font-family: var(--fonte-secundaria);
-  font-weight: 600;
-  color: var(--cor-texto);
-  text-decoration: none;
-  font-size: 3.2rem;
-
-  padding: 5% 0;
-
   display: flex;
   align-items: center;
   gap: 20px;
+  text-decoration: none;
 }
 
-.apresentacao-conteudo-links-link:hover,
+.apresentacao-conteudo-links-link-texto {
+  font-family: var(--fonte-secundaria);
+  font-weight: 600;
+  color: var(--cor-texto);
+
+  font-size: 3.2rem;
+
+  padding: 5% 0;
+}
+
+.apresentacao-conteudo-links-link-texto:hover,
 .apresentacao-conteudo-email:hover {
   color: var(--cor-destaque);
   text-decoration: underline;
   transition: 0.3s;
+}
+
+.link-icon {
+  font-size: 4rem;
+  color: var(--cor-destaque);
 }
 
 .apresentacao-conteudo-email {
@@ -115,10 +170,6 @@ body {
   font-size: 3.2rem;
   text-align: center;
 }
-
-/* .apresentacao-conteudo-links-link-icone {
-    width: 100%;
-} */
 
 .apresentacao-foto {
   width: 40.14%;
@@ -142,12 +193,18 @@ body {
   }
 }
 
-@media (max-width: 1367px) {
+@media (max-width: 1365px) {
+  .theme-button {
+    margin: 60px 0 0 0;
+  }
+
   .apresentacao {
     flex-direction: column-reverse;
+    padding: 2vh 6vw;
   }
 
   .apresentacao-conteudo {
+    max-width: 677px;
     width: 100%;
   }
 }
@@ -155,8 +212,8 @@ body {
 @media (max-width: 1150px) {
   .apresentacao {
     flex-direction: column-reverse;
-    padding: 30px;
-    margin: 0;
+    /* padding: 2vh ; */
+    /* margin: 0; */
   }
 
   .apresentacao-foto {
@@ -181,9 +238,17 @@ body {
     font-size: 3.8rem;
   }
 
-  .apresentacao-conteudo-links-link,
+  .apresentacao-conteudo-links-link-texto,
   .apresentacao-conteudo-email {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+  }
+
+  .apresentacao-conteudo-links-link {
+    gap: 20px;
+  }
+
+  .link-icon {
+    font-size: 2.8rem;
   }
 
   .apresentacao-foto {
@@ -206,3 +271,6 @@ body {
   --cor-texto: #000000;
   --cor-texto-sec: #4d0194;
 }
+
+/* Dark theme animations inspired in Chaoo Charles 
+https://www.youtube.com/watch?v=OoARU-ZmseA&ab_channel=ChaooCharles */

@@ -14,10 +14,22 @@
     <meta name="msapplication-TileColor" content="#160029" />
     <meta name="theme-color" content="#ffffff" />
 
+    <script
+      src="https://kit.fontawesome.com/762c5d0f1d.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>ebonatto.dev</title>
   </head>
   <body class="dark-theme">
-    <img src="./assets/sol.png" class="theme-button" alt="" />
+    <div class="theme-button">
+      <input type="checkbox" class="checkbox" id="checkbox" />
+      <label for="checkbox" class="theme-toggle">
+        <i class="fa-solid fa-sun"></i>
+        <i class="fa-solid fa-moon"></i>
+      </label>
+    </div>
+    <!-- <img src="./assets/sol.png" class="theme-button" alt="" /> -->
     <main class="apresentacao">
       <section class="apresentacao-conteudo">
         <p class="apresentacao-conteudo-intro">Olá, meu nome é</p>
@@ -34,33 +46,26 @@
             target="_blank"
             class="apresentacao-conteudo-links-link"
           >
-            <img
-              src="/assets/linkedinicon-dark.png"
-              class="apresentacao-conteudo-links-link-icon linkedin"
-            />
-            Linekdin
+            <i class="fa-brands fa-linkedin-in link-icon"></i>
+            <span class="apresentacao-conteudo-links-link-texto">Linekdin</span>
           </a>
           <a
             href="https://www.github.com/ebonatto"
             target="_blank"
             class="apresentacao-conteudo-links-link"
           >
-            <img
-              src="/assets/githubicon-dark.png"
-              class="apresentacao-conteudo-links-link-icon github"
-            />
-            GitHub
+            <i class="fa-brands fa-github link-icon"></i>
+            <span class="apresentacao-conteudo-links-link-texto">GitHub</span>
           </a>
           <a
             href="/CV_EBonatto.pdf"
             target="_blank"
             class="apresentacao-conteudo-links-link"
           >
-            <img
-              src="/assets/cvicon-dark.png"
-              class="apresentacao-conteudo-links-link-icon cv"
-            />
-            Currículo
+            <i class="fa-solid fa-image-portrait link-icon"></i>
+            <span class="apresentacao-conteudo-links-link-texto"
+              >Currículo</span
+            >
           </a>
         </div>
         <a
