@@ -279,6 +279,10 @@ body {
   .apresentacao-foto {
     width: 50%;
   }
+
+  .eng {
+    font-size: 6rem;
+  }
 }
 
 @media (max-width: 650px) {
@@ -296,6 +300,10 @@ body {
   .apresentacao-conteudo-nome,
   .apresentacao-conteudo-titulo {
     font-size: 3.8rem;
+  }
+
+  .eng {
+    font-size: 3.3rem;
   }
 
   .apresentacao-conteudo-links-link-texto,
